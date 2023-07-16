@@ -7,35 +7,39 @@ import java.util.Scanner;
 
 public abstract class MainApplication extends Pet {
     public static void main(String[] args) {
-        getUserInput();
+        List<Pet> petList = getUserInput();
+        printPetList(petList);
     }
 
-    static void getUserInput() {
-     /*    Scanner scanner = new Scanner(System.in);
-       int numberOfPetsUserHas = 0;
 
-        List<String> petNames = new ArrayList();
-        List<String> petAges = new ArrayList();
+    static List<Pet> getUserInput() {
 
-        System.out.print("HOW MANY PETS DO YOU HAVE?  ");
+    /* static void getUserInput() {
+     *    Scanner scanner = new Scanner(System.in);
+        int numberOfPetsUserHas = 0;
 
-        numberOfPetsUserHas = scanner.nextInt();
+         List<String> petNames = new ArrayList();
+         List<String> petAges = new ArrayList();
 
-        for (int i = 1; i <= numberOfPetsUserHas; i++) {
-            System.out.println(" WHAT IS THE NAME OF PET # " + i + ".");
-            petNames.add(scanner.next());
-            System.out.println(" WHAT IS THE AGE OF PET # " + i + ".");
-            petAges.add(scanner.next());
-        }
-        scanner.close();
+         System.out.print("HOW MANY PETS DO YOU HAVE?  ");
 
-        System.out.println("LIST OF PETS:");
-        int count = 1;
-        for (String name : petNames) {
-            int index = count - 1;
-            System.out.println("Pet #" + count + " - Name: " + name + ", Age: " + petAges.get(index));
-            count++;
-        }*/
+         numberOfPetsUserHas = scanner.nextInt();
+
+         for (int i = 1; i <= numberOfPetsUserHas; i++) {
+             System.out.println(" WHAT IS THE NAME OF PET # " + i + ".");
+             petNames.add(scanner.next());
+             System.out.println(" WHAT IS THE AGE OF PET # " + i + ".");
+             petAges.add(scanner.next());
+         }
+         scanner.close();
+
+         System.out.println("LIST OF PETS:");
+         int count = 1;
+         for (String name : petNames) {
+             int index = count - 1;
+             System.out.println("Pet #" + count + " - Name: " + name + ", Age: " + petAges.get(index));
+             count++;
+         }*/
         List<Pet> petList = new ArrayList<>();
         int numberOfPets;
         String petType;
@@ -68,12 +72,18 @@ public abstract class MainApplication extends Pet {
                 petList.add(pig);
             }
 
+
             }
-            StringBuilder petBuilder = new StringBuilder();
-            for (Pet j: petList){
-                petBuilder.append("\n Pet").append(j.getName()).append(j.speak());
+        return petList;
 
         }
 
+    static void printPetList(List<Pet> petList) {
+        System.out.println("LIST OF PETS:");
+        for (Pet pet : petList) {
+            System.out.println("Name: " + pet.getName() + ", Says: " + pet.speak());
+        }
     }
-}
+
+    }
+
