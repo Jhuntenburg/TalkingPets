@@ -67,11 +67,11 @@ public abstract class MainApplication extends Pet {
                 Pet pig = new Pig(petName);
                 petList.add(pig);
             }
+
+            }
             StringBuilder petBuilder = new StringBuilder();
             for (Pet j: petList){
                 petBuilder.append("\n Pet").append(j.getName()).append(j.speak());
-            }
-
 
         }
 
